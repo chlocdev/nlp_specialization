@@ -41,16 +41,30 @@ def get_vectors(data, word2Ind, V, C):
             x[idx] = freq / num_ctx_words
         yield x, y
         i += 1
-        if i >= len(data):
-            print("i is being set to 0")
-            i = 0
+        if i >= len(data) - C:
+            print("i is being set to", C)
+            i = C
 
+
+# +
+### previous
+# def get_batches(data, word2Ind, V, C, batch_size):
+#     batch_x = []
+#     batch_y = []
+#     for x, y in get_vectors(data, word2Ind, V, C):
+#         while len(batch_x) < batch_size:
+#             batch_x.append(x)
+#             batch_y.append(y)
+#         else:
+#             yield np.array(batch_x).T, np.array(batch_y).T
+#             batch_x = []
+#             batch_y = []
 
 def get_batches(data, word2Ind, V, C, batch_size):
     batch_x = []
     batch_y = []
     for x, y in get_vectors(data, word2Ind, V, C):
-        while len(batch_x) < batch_size:
+        if len(batch_x) < batch_size:
             batch_x.append(x)
             batch_y.append(y)
         else:
@@ -58,6 +72,8 @@ def get_batches(data, word2Ind, V, C, batch_size):
             batch_x = []
             batch_y = []
 
+
+# -
 
 def compute_pca(data, n_components=2):
     """
