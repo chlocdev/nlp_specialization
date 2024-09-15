@@ -1,5 +1,10 @@
 # nlp_specialization
 
+<p align="center">
+  <img src="docs/Modified_Chomsky_Hierarchy.svg" alt="Image Description" width="300" />
+</p>
+
+
 ### references
 
 https://transang.me/formal-language-theory/
