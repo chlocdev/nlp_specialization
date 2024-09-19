@@ -7,9 +7,11 @@
 3. **Brevity Penalty (BP)**: If the generated text is shorter than the reference text, a brevity penalty is applied to avoid favoring shorter translations.
 
 #### BLEU Formula:
-\[
+
+$
 \text{BLEU} = BP \times \exp \left( \sum_{n=1}^{N} w_n \log P_n \right)
-\]
+$
+
 Where:
 - \( BP \) is the brevity penalty.
 - \( P_n \) is the precision for n-grams.
@@ -31,14 +33,14 @@ Bigram match count = 3 ("The cat", "cat is", "on the")
 
 **Brevity Penalty (BP)**:  
 The candidate length is 6 words, while the reference length is 7. Since the candidate is shorter, the brevity penalty applies:
-\[
-BP = \exp\left(1 - \frac{7}{6}\right) = 0.93
-\]
+$
+\text{BP} = \exp\left(1 - \frac{7}{6}\right) = 0.93
+$
 
 **Final BLEU score**:  
-\[
+$
 \text{BLEU} = 0.93 \times \exp\left( \frac{1}{2} \log(5/6) + \frac{1}{2} \log(3/5) \right)
-\]
+$
 
 ---
 
@@ -48,9 +50,9 @@ BP = \exp\left(1 - \frac{7}{6}\right) = 0.93
 #### How ROUGE-N is Calculated:
 - It is calculated as the recall of n-grams from the reference text that appear in the candidate text.
 
-\[
+$
 \text{ROUGE-N} = \frac{\text{Number of overlapping n-grams}}{\text{Total n-grams in reference text}}
-\]
+$
 
 #### Example ROUGE-1 Calculation:
 - **Candidate sentence**: "The cat is on the mat."
@@ -63,9 +65,9 @@ Reference: `["The", "cat", "is", "sitting", "on", "the", "mat"]`
 Total unigrams in reference = 7  
 Matching unigrams = 5 (missing "sitting")
 
-\[
+$
 \text{ROUGE-1} = \frac{5}{7} = 0.714
-\]
+#
 
 For **ROUGE-2** (bigrams):
 - Candidate bigrams: `["The cat", "cat is", "is on", "on the", "the mat"]`
@@ -74,9 +76,9 @@ For **ROUGE-2** (bigrams):
 Total bigrams in reference = 6  
 Matching bigrams = 3
 
-\[
+$
 \text{ROUGE-2} = \frac{3}{6} = 0.5
-\]
+$
 
 ### Summary
 - **BLEU** is a precision-based metric focusing on how many n-grams from the candidate are present in the reference, with a brevity penalty.

@@ -7,6 +7,8 @@
 
 ### references
 
+https://fasttext.cc/docs/en/crawl-vectors.html
+
 https://transang.me/formal-language-theory/
 
 https://web.stanford.edu/~jurafsky/slp3/
