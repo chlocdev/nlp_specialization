@@ -7,6 +7,8 @@
 
 ### references
 
+https://t5-trivia.glitch.me/
+
 https://fasttext.cc/docs/en/crawl-vectors.html
 
 https://transang.me/formal-language-theory/
